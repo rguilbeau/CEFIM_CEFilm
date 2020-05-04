@@ -15,7 +15,7 @@ import fr.romainguilbeau.cefilm.model.Movie;
  * Item movie view
  */
 @SuppressLint("ViewConstructor")
-public class MovieView extends LinearLayout {
+public class MovieItemView extends LinearLayout {
 
     /**
      * The displayed movie
@@ -39,9 +39,9 @@ public class MovieView extends LinearLayout {
      *
      * @param context App context
      */
-    public MovieView(Context context, Movie movie) {
+    public MovieItemView(Context context, Movie movie) {
         super(context);
-        inflate(context, R.layout.component_movie_view, this);
+        inflate(context, R.layout.component_movie_item_view, this);
 
         initComponents();
 
@@ -49,16 +49,16 @@ public class MovieView extends LinearLayout {
         imageViewPoster.setImageResource(movie.getPosterResourceId());
         textViewTitle.setText(movie.getTitle());
         String dateFormatted = DateFormat.getDateInstance().format(movie.getReleaseDate());
-        textViewRelease.setText(getContext().getString(R.string.movie_view_release, dateFormatted));
+        textViewRelease.setText(getContext().getString(R.string.movie_item_view_release, dateFormatted));
     }
 
     /**
      * Initialize components
      */
     private void initComponents() {
-        imageViewPoster = findViewById(R.id.movie_view_image_view_poster);
-        textViewTitle = findViewById(R.id.movie_view_text_view_title);
-        textViewRelease = findViewById(R.id.movie_view_text_view_release);
+        imageViewPoster = findViewById(R.id.movie_item_view_image_view_poster);
+        textViewTitle = findViewById(R.id.movie_item_view_text_view_title);
+        textViewRelease = findViewById(R.id.movie_item_view_text_view_release);
     }
 
     /**

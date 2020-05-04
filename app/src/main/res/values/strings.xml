@@ -9,6 +9,6 @@
     <string name="main_search">Search</string>
 
     <!-- MOVIE VIEW (COMPONENT) -->
-    <string name="movie_view_release">Released : %s</string>
+    <string name="movie_item_view_release">Released : %s</string>
 
 </resources>

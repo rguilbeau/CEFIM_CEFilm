@@ -1,5 +1,6 @@
 package fr.romainguilbeau.cefilm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import java.security.InvalidParameterException;
 import java.sql.Date;
 import java.util.ArrayList;
 
-import fr.romainguilbeau.cefilm.components.MovieView;
+import fr.romainguilbeau.cefilm.components.MovieItemView;
 import fr.romainguilbeau.cefilm.model.Movie;
 
 /**
@@ -26,10 +27,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private TextView textViewWelcome;
     /**
-     * Movies list title
-     */
-    private TextView textViewMoviesListTitle;
-    /**
      * Button to perform search
      */
     private Button buttonSearch;
@@ -39,12 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout linearLayoutMovies;
 
     /**
-     * Create activity
-     *
-     * @param savedInstanceState saved instance state
+     * {{@inheritDoc}}
      */
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -55,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Movie> movies = getPopularMovies();
         for (Movie movie : movies) {
-            MovieView movieView = new MovieView(this, movie);
-            movieView.setOnClickListener(this::clickOnMovie);
-            linearLayoutMovies.addView(movieView);
+            MovieItemView movieItemView = new MovieItemView(this, movie);
+            movieItemView.setOnClickListener(this::clickOnMovie);
+            linearLayoutMovies.addView(movieItemView);
         }
         Toast.makeText(this, textViewWelcome.getText(), Toast.LENGTH_SHORT).show();
     }
@@ -67,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initComponents() {
         textViewWelcome = findViewById(R.id.main_text_view_welcome);
-        textViewMoviesListTitle = findViewById(R.id.main_text_view_movies_list_title);
         linearLayoutMovies = findViewById(R.id.main_linear_layout_movies);
         buttonSearch = findViewById(R.id.main_button_search);
     }
@@ -78,12 +71,17 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view (Caution : Must be instance of MovieView)
      */
     private void clickOnMovie(View view) {
-        if (!(view instanceof MovieView)) {
+        if (!(view instanceof MovieItemView)) {
             throw new InvalidParameterException("View must be instance of MovieView !");
         }
 
-        MovieView movieView = (MovieView) view;
-        Toast.makeText(this, "Clique sur " + movieView.getMovie().getTitle(), Toast.LENGTH_SHORT).show();
+        MovieItemView movieItemView = (MovieItemView) view;
+
+        Intent i = new Intent(this, MovieActivity.class);
+        i.putExtra(MovieActivity.EXTRA_MOVIE_TITLE, movieItemView.getMovie().getTitle());
+        i.putExtra(MovieActivity.EXTRA_MOVIE_BACKGROUND_PICTURE, movieItemView.getMovie().getBackgroundResourceId());
+
+        startActivity(i);
     }
 
     /**
@@ -102,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private ArrayList<Movie> getPopularMovies() {
         ArrayList<Movie> movies = new ArrayList<>();
-        movies.add(new Movie(R.drawable.bttf, "Retour vers le future", Date.valueOf("1985-10-30")));
-        movies.add(new Movie(R.drawable.alien, "Alien, le huitième passager", Date.valueOf("1979-11-12")));
+        movies.add(new Movie(R.drawable.bttf, R.drawable.bttf_bg, "Retour vers le future", Date.valueOf("1985-10-30")));
+        movies.add(new Movie(R.drawable.alien, R.drawable.alien_bg, "Alien, le huitième passager", Date.valueOf("1979-11-12")));
         return movies;
     }
 
