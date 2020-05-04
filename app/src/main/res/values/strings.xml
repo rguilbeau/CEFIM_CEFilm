@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CEFilm</string>
+
+    <!-- MAIN VIEW -->
+    <string name="main_title">Hello Bobby !!</string>
+    <string name="main_subtitle">Popular movies</string>
+    <string name="main_search">Search</string>
 </resources>
