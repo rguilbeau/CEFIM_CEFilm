@@ -5,8 +5,8 @@
     <string name="na">N/A</string>
 
     <!-- MAIN VIEW -->
-    <string name="main_title">Bienvenue Bobby !!</string>
-    <string name="main_subtitle">Films populaires</string>
+    <string name="main_welcome">Bonjour %s !</string>
+    <string name="main_movies_title">Films populaires</string>
     <string name="main_search">Rechercher</string>
 
     <!-- MOVIE VIEW (COMPONENT) -->

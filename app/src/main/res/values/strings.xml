@@ -4,8 +4,8 @@
     <string name="na">N/A</string>
 
     <!-- MAIN VIEW -->
-    <string name="main_title">Hello Bobby !!</string>
-    <string name="main_subtitle">Popular movies</string>
+    <string name="main_welcome">Hello %s !</string>
+    <string name="main_movies_title">Popular movies</string>
     <string name="main_search">Search</string>
 
     <!-- MOVIE VIEW (COMPONENT) -->
