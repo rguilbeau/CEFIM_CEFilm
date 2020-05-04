@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:background="#F4F4F4"
     android:id="@+id/main_layout">
@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/main_subtitle"
@@ -25,8 +25,7 @@
         android:layout_below="@id/main_title"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20sp"/>
-
+        android:textSize="20sp" />
 
     <ScrollView
         android:id="@+id/main_movies"
@@ -37,82 +36,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <fr.romainguilbeau.cefilm.components.MovieView
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp">
+                android:layout_width="match_parent"
+                app:poster="@drawable/bttf"
+                app:title="Back to the future"
+                app:release="30 octobre 1985" />
 
-                <ImageView
-                    android:id="@+id/film_poster"
-                    android:layout_width="100dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/bttf"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginStart="15dp">
-
-                    <TextView
-                        android:id="@+id/movie_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Back to the future"
-                        android:textSize="20sp"/>
-
-                    <TextView
-                        android:id="@+id/movie_release_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sortie : 30 octobre 1985"
-                        android:layout_below="@id/movie_title"
-                        android:layout_marginTop="16dp"/>
-
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <fr.romainguilbeau.cefilm.components.MovieView
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp">
-
-                <ImageView
-                    android:id="@+id/film_poster2"
-                    android:layout_width="100dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/alien"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginStart="15dp">
-
-                    <TextView
-                        android:id="@+id/movie_title2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Alien, le huitième passager"
-                        android:textSize="20sp"/>
-
-                    <TextView
-                        android:id="@+id/movie_release_date2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sortie : 12 septembre 1979"
-                        android:layout_below="@id/movie_title2"
-                        android:layout_marginTop="16dp"/>
-
-                </RelativeLayout>
-            </LinearLayout>
-
+                android:layout_width="match_parent"
+                app:poster="@drawable/alien"
+                app:title="Alien, le huitième passager"
+                app:release="12 septembre 1979" />
         </LinearLayout>
+
     </ScrollView>
 
     <Button

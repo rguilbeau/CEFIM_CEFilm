@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MovieView">
+        <attr name="poster" format="reference" />
+        <attr name="title" format="string" />
+        <attr name="release" format="string" />
+    </declare-styleable>
+
+</resources>
