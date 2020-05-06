@@ -3,13 +3,24 @@
     <!-- GLOBAL -->
     <string name="app_name">CEFilm</string>
     <string name="na">N/A</string>
+    <string name="network_error">Device is not connected to network, please check your network settings.</string>
 
     <!-- MAIN VIEW -->
     <string name="main_welcome">Bonjour %s !</string>
-    <string name="main_movies_title">Films populaires</string>
+    <string name="main_movies_title">Films favoris</string>
     <string name="main_search">Rechercher</string>
 
     <!-- MOVIE VIEW (COMPONENT) -->
     <string name="movie_item_view_release">Sortie : %s</string>
+
+    <!-- MOVIE VIEW -->
+    <string name="movie_title">Film</string>
+    <string name="movie_about">A propos de ce film</string>
+    <string name="movie_more_synopsis">Lire plus</string>
+    <string name="movie_less_synopsis">Masquer</string>
+    <string name="movie_director">Directeur</string>
+    <string name="movie_actors">Acteurs</string>
+    <string name="movie_awards">Awards</string>
+    <string name="movie_load_error">Impossible de récupérer la déscription du film</string>
 
 </resources>

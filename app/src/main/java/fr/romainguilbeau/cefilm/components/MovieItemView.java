@@ -6,10 +6,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.text.DateFormat;
-
 import fr.romainguilbeau.cefilm.R;
-import fr.romainguilbeau.cefilm.model.Movie;
+import fr.romainguilbeau.cefilm.omdbapi.models.Movie;
 
 /**
  * Item movie view
@@ -46,10 +44,8 @@ public class MovieItemView extends LinearLayout {
         initComponents();
 
         this.movie = movie;
-        imageViewPoster.setImageResource(movie.getPosterResourceId());
         textViewTitle.setText(movie.getTitle());
-        String dateFormatted = DateFormat.getDateInstance().format(movie.getReleaseDate());
-        textViewRelease.setText(getContext().getString(R.string.movie_item_view_release, dateFormatted));
+        textViewRelease.setText(getContext().getString(R.string.movie_item_view_release, movie.getReleased()));
     }
 
     /**
@@ -68,5 +64,14 @@ public class MovieItemView extends LinearLayout {
      */
     public Movie getMovie() {
         return movie;
+    }
+
+    /**
+     * Get image view poster
+     *
+     * @return image view poster
+     */
+    public ImageView getImageViewPoster() {
+        return this.imageViewPoster;
     }
 }
