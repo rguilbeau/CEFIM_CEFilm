@@ -11,18 +11,38 @@ public class OmdbApiException extends Exception {
     private Response response;
     private Throwable cause;
 
+    /**
+     * Create exception
+     *
+     * @param message The exception message
+     */
     OmdbApiException(String message) {
         super(message);
     }
 
+    /**
+     * Set Call reference
+     *
+     * @param call The call reference
+     */
     void setCall(Call call) {
         this.call = call;
     }
 
+    /**
+     * Set response reference
+     *
+     * @param response The response reference
+     */
     void setResponse(Response response) {
         this.response = response;
     }
 
+    /**
+     * Set cause reference
+     *
+     * @param cause The cause reference
+     */
     void setCause(Throwable cause) {
         this.cause = cause;
     }

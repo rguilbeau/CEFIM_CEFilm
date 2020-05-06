@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackFailure;
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackMovie;
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackMovieList;
 import fr.romainguilbeau.cefilm.omdbapi.models.ErrorMessage;
 import fr.romainguilbeau.cefilm.omdbapi.models.Movie;
 import fr.romainguilbeau.cefilm.omdbapi.models.MovieSearch;

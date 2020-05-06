@@ -1,5 +1,9 @@
 package fr.romainguilbeau.cefilm.omdbapi;
 
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackFailure;
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackMovie;
+import fr.romainguilbeau.cefilm.omdbapi.callbacks.CallbackMovieList;
+
 public class OmdbApiBuilder {
 
     /**

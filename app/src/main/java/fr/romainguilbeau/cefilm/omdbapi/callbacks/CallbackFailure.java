@@ -1,4 +1,6 @@
-package fr.romainguilbeau.cefilm.omdbapi;
+package fr.romainguilbeau.cefilm.omdbapi.callbacks;
+
+import fr.romainguilbeau.cefilm.omdbapi.OmdbApiException;
 
 /**
  * OmdbApi callback failure
