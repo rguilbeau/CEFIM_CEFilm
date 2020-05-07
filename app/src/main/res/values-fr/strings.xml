@@ -9,9 +9,15 @@
     <string name="main_welcome">Bonjour %s !</string>
     <string name="main_movies_title">Films favoris</string>
     <string name="main_search">Rechercher</string>
+    <string name="main_no_favorite">Pas de favoris</string>
 
     <!-- MOVIE VIEW (COMPONENT) -->
     <string name="movie_item_view_release">Sortie : %s</string>
+
+    <!-- MOVIE SEARCH VIEW -->
+    <string name="search_movie_type_all">Films ou séries</string>
+    <string name="search_movie_type_movies">Uniquement les films</string>
+    <string name="search_movie_type_series">Uniquement les séries</string>
 
     <!-- MOVIE VIEW -->
     <string name="movie_title">Film</string>

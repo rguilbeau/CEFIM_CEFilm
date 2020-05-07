@@ -219,8 +219,6 @@ public class MovieActivity extends AppCompatActivity {
         } else {
             runOnUiThread(() -> fab.setImageResource(R.drawable.favorite_remove));
             favoriteMovies.add(this.imdbID);
-            favoriteMovies.add("tt3896198");
-
         }
     }
 }

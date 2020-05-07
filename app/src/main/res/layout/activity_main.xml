@@ -25,6 +25,16 @@
         android:layout_marginBottom="10dp"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/main_text_view_no_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_no_favorite"
+        android:layout_below="@id/main_text_view_movies_list_title"
+        android:layout_marginTop="30dp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
     <ProgressBar
         android:id="@+id/main_progress_bar_favorite"
         android:layout_width="wrap_content"

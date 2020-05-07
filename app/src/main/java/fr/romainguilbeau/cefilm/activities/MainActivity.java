@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private TextView textViewWelcome;
     /**
+     * No favorite text view
+     */
+    private TextView textViewNoFavorite;
+    /**
      * Favorite movie progress bar
      */
     private ProgressBar progressBar;
@@ -78,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         linearLayoutMovies.removeAllViews();
         Set<String> movies = favoriteMovies.findAll();
+
+        if (movies.size() == 0) {
+            textViewNoFavorite.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
+            linearLayoutMovies.setVisibility(View.VISIBLE);
+        }
+
         for (String imdbID : movies) {
             new OmdbApiBuilder.ByID(imdbID)
                     .onFailure(ex -> showErrorMessage(ex.getMessage()))
@@ -94,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.main_progress_bar_favorite);
         linearLayoutMovies = findViewById(R.id.main_linear_layout_movies);
         buttonSearch = findViewById(R.id.main_button_search);
+        textViewNoFavorite = findViewById(R.id.main_text_view_no_favorite);
     }
 
     /**
@@ -151,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
      * @param v Button view
      */
     private void clickOnSearch(View v) {
-        Toast.makeText(this, "Clique sur rechercher", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, SearchActivity.class);
+        startActivity(i);
     }
 
     /**

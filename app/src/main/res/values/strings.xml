@@ -8,6 +8,7 @@
     <string name="main_welcome">Hello %s !</string>
     <string name="main_movies_title">Favorite movies</string>
     <string name="main_search">Search</string>
+    <string name="main_no_favorite">No favorite</string>
 
     <!-- MOVIE VIEW -->
     <string name="movie_title">Movie</string>
@@ -19,16 +20,12 @@
     <string name="movie_awards">Awards</string>
     <string name="movie_load_error">Unable to retrieve move description</string>
 
+    <!-- MOVIE SEARCH VIEW -->
+    <string name="search_movie_type_all">Movies or series</string>
+    <string name="search_movie_type_movies">Only movies</string>
+    <string name="search_movie_type_series">Only series</string>
+
     <!-- MOVIE VIEW (COMPONENT) -->
     <string name="movie_item_view_release">Released : %s</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

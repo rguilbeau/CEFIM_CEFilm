@@ -201,9 +201,9 @@ public class OmdbApiBuilder {
      * Type of movie
      */
     public enum MovieType {
-        MOVIE("movie"),
-        SERIES("series"),
-        EPISODE("episode");
+        ALL(""),
+        MOVIES("movie"),
+        SERIES("series");
 
         /**
          * API value
